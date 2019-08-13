@@ -66,7 +66,7 @@ public class HibernateConfig {
 
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQL9Dialect");
 
-        properties.setProperty("hibernate.default_schema", "hibernate_demo");
+        properties.setProperty("hibernate.default_schema", "public");
 
         properties.setProperty("hibernate.hbm2ddl.auto", "validate");
 
