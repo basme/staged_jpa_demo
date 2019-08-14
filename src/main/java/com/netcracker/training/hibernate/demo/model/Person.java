@@ -16,6 +16,8 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -28,6 +30,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @Table(name = "persons")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Person {
 
     @Id

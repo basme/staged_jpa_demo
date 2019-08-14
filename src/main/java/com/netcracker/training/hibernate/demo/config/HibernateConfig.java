@@ -68,7 +68,7 @@ public class HibernateConfig {
 
         properties.setProperty("hibernate.default_schema", "public");
 
-        properties.setProperty("hibernate.hbm2ddl.auto", "validate");
+        properties.setProperty("hibernate.hbm2ddl.auto", "update");
 
         properties.setProperty("hibernate.show_sql", "true");
         properties.setProperty("hibernate.format_sql", "true");
