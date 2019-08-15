@@ -5,6 +5,7 @@ import com.netcracker.training.hibernate.demo.model.relations.Book;
 import com.netcracker.training.hibernate.demo.model.relations.ContactInfo;
 import com.netcracker.training.hibernate.demo.model.relations.Page;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 
 /**
@@ -12,8 +13,11 @@ import java.util.ArrayList;
  */
 public class Examples {
 
+    public static final BigInteger AZIMOV_ID = BigInteger.valueOf(12345l);
+
     public static Author azimov() {
         Author azimov = new Author();
+        azimov.setAuthorId(AZIMOV_ID);
         azimov.setName("Isaac Azimov");
         azimov.setBooks(new ArrayList<>());
         return azimov;
@@ -44,6 +48,7 @@ public class Examples {
         Book book = new Book();
         book.setTitle("Nightfall");
         book.setAuthors(new ArrayList<>());
+        book.setPages(new ArrayList<>());
         return book;
     }
 
@@ -51,6 +56,7 @@ public class Examples {
         Book book = new Book();
         book.setTitle("End Of Eternity");
         book.setAuthors(new ArrayList<>());
+        book.setPages(new ArrayList<>());
         return book;
     }
 
@@ -58,6 +64,7 @@ public class Examples {
         Book book = new Book();
         book.setTitle("Nebula");
         book.setAuthors(new ArrayList<>());
+        book.setPages(new ArrayList<>());
         return book;
     }
 
