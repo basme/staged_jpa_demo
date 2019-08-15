@@ -1,0 +1,13 @@
+INSERT INTO public.contactinfo (contactid, mail, phone) VALUES (1.00, 'azimov@test.com', '55512345678');
+INSERT INTO public.contactinfo (contactid, mail, phone) VALUES (2.00, 'silverberg@test.com', '5554365734567');
+INSERT INTO public.author (authorid, name, contacts) VALUES (2.00, 'Robert Silverberg', 2.00);
+INSERT INTO public.author (authorid, name, contacts) VALUES (1.00, 'Isaac Asimov', 1.00);
+INSERT INTO public.book (bookid, title) VALUES (1.00, 'End Of Eternity');
+INSERT INTO public.book (bookid, title) VALUES (2.00, 'Nebula');
+INSERT INTO public.book (bookid, title) VALUES (3.00, 'Nightfall');
+INSERT INTO public.authorship (author, book) VALUES (1.00, 1.00);
+INSERT INTO public.authorship (author, book) VALUES (1.00, 3.00);
+INSERT INTO public.authorship (author, book) VALUES (2.00, 2.00);
+INSERT INTO public.authorship (author, book) VALUES (2.00, 3.00);
+INSERT INTO public.page (pageid, istechnical, number, bookid) VALUES (1.00, true, 1, 3.00);
+INSERT INTO public.page (pageid, istechnical, number, bookid) VALUES (2.00, false, 70, 3.00);
