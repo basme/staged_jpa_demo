@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class Examples {
 
     public static final BigInteger AZIMOV_ID = BigInteger.valueOf(12345l);
+    public static final BigInteger SILVERBERG_ID = BigInteger.valueOf(12346l);
 
     public static Author azimov() {
         Author azimov = new Author();
@@ -25,6 +26,7 @@ public class Examples {
 
     public static Author silverberg() {
         Author silverberg = new Author();
+        silverberg.setAuthorId(SILVERBERG_ID);
         silverberg.setName("Robert Silverberg");
         silverberg.setBooks(new ArrayList<>());
         return silverberg;

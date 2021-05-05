@@ -24,6 +24,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import java.math.BigInteger;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -56,9 +57,14 @@ public class Stage7 {
         Book nebula = Examples.nebula();
         Page folder = Examples.nightfallFolder();
         Page page = Examples.nightfallSimplePage();
-        azimov.getBooks().addAll(Lists.newArrayList(nightfall, endOfEternity));
-        silverberg.getBooks().addAll(Lists.newArrayList(nebula, nightfall));
+        folder.setBook(nightfall);
+        page.setBook(nightfall);
         nightfall.getPages().addAll(Lists.newArrayList(folder, page));
+        Book savedNightfall = bookRepo.save(nightfall);
+        Book savedNebula = bookRepo.save(nebula);
+        Book savedEndOfEternity = bookRepo.save(endOfEternity);
+        azimov.getBooks().addAll(Lists.newArrayList(nightfall, endOfEternity));
+        silverberg.getBooks().addAll(Lists.newArrayList(nightfall, nebula));
         azimov.setContactInfo(azimovInfo);
         silverberg.setContactInfo(silverbergInfo);
         authorRepo.save(azimov);
@@ -95,7 +101,7 @@ public class Stage7 {
         List<Object> result = query.getResultList();
         assertThat(result, hasItem(Matchers.isA(PageBean.class)));
         assertThat(result, hasSize(2));
-        assertThat(result, hasItem(hasProperty("number", is(70))));
+        assertThat(result, hasItem(hasProperty("number", is(56))));
     }
 
     @Test
